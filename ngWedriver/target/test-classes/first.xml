@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Authorization" preserve-order="true" verbose="1">
+    <test name="Authorization_SYNERGY" preserve-order="true">
+        <classes>
+            <class name = "TC1_Login"/>
+        </classes>
+    </test>
+</suite>
