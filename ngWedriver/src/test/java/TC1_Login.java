@@ -30,6 +30,7 @@ public class TC1_Login {
     public void kiran() throws InterruptedException {
 
         NgWebDriver ngWebDriver = new NgWebDriver((JavascriptExecutor) driver);
+        System.out.println("Login");
         driver.navigate().to("https://t2.devero.com/?site=qaautomation1");
         driver.findElement(By.name("username")).sendKeys("sa");
         driver.findElement(By.name("password")).sendKeys("testing123");
