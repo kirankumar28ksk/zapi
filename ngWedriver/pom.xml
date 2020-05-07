@@ -8,12 +8,12 @@
     <artifactId>ngWedriver</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>3.141.59</version>
-    </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -34,6 +34,11 @@
         </dependency>
 
     </dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
+        <skipTests>true</skipTests>
+    </properties>
     <build>
 
         <plugins>
@@ -63,18 +68,19 @@
                 <version>2.20</version>
 
                 <configuration>
-
+                    <!-- <suiteXmlFiles> <suiteXmlFile>${basedir}/testng.xml</suiteXmlFile> </suiteXmlFiles> -->
+                    <!-- c:\Temp>java org.testng.TestNG -groups regressiontest - testname AllTests-->
+                    <!--<groups>regressiontest</groups> -->
+                    <!-- <trimStackTrace>false</trimStackT;race> -->
+                    <!--<suitename>AllTests</suitename>-->
                     <suiteXmlFiles>
-
-                        <suiteXmlFile>TestNG.xml</suiteXmlFile>
-
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
-
+                    <!-- Build with '-DskipTests=true' to bypass test execution @ build time Default: false -->
+                    <skipTests>${skipTests}</skipTests>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
-
             </plugin>
-
         </plugins>
-
     </build>
 </project>
