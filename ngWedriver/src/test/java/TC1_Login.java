@@ -23,9 +23,9 @@ public class TC1_Login {
     @BeforeMethod
     public void check(){
 
-        WebDriverManager.firefoxdriver().setup();
-         driver = new FirefoxDriver();
-         driver.manage().window().maximize();
+//        WebDriverManager.firefoxdriver().setup();
+//         driver = new FirefoxDriver();
+//         driver.manage().window().maximize();
     }
 
     @Test
@@ -34,11 +34,11 @@ public class TC1_Login {
 
         String path = System.getProperty("user.dir");
 //        System.setProperty("webdriver.chrome.driver",path+"/src/test/resources/chromedriver");
-//                System.setProperty("webdriver.gecko.driver",path+"/src/test/resources/geckodriver");
+                System.setProperty("webdriver.gecko.driver",path+"/src/test/resources/geckodriver");
 //        driver = new ChromeDriver();
-//        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-//        capabilities.setCapability("marionette", true);
-//        driver = new FirefoxDriver();
+        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        capabilities.setCapability("marionette", true);
+        driver = new FirefoxDriver(capabilities);
         NgWebDriver ngWebDriver = new NgWebDriver((JavascriptExecutor) driver);
         System.out.println("Login");
         driver.navigate().to("https://t2.devero.com/?site=qaautomation1");
