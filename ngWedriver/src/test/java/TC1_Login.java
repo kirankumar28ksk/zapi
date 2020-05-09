@@ -8,11 +8,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.List;
 
 public class TC1_Login {
 
@@ -21,13 +21,18 @@ public class TC1_Login {
     @BeforeMethod
     public void check(){
 
-        WebDriverManager.chromedriver().setup();
-         driver = new ChromeDriver();
-         driver.manage().window().maximize();
+//        WebDriverManager.chromedriver().setup();
+//         driver = new ChromeDriver();
+//         driver.manage().window().maximize();
     }
 
     @Test
-    public void kiran() throws InterruptedException {
+    public void kiran()  {
+
+
+        String path = System.getProperty("user.dir");
+        System.setProperty("webdriver.chrome.driver",path+"/src/test/resources/chromedriver");
+        driver = new ChromeDriver();
 
         NgWebDriver ngWebDriver = new NgWebDriver((JavascriptExecutor) driver);
         System.out.println("Login");
@@ -38,8 +43,8 @@ public class TC1_Login {
     }
 
     @AfterMethod
-    public void last(){
-
+    public void restore()
+    {
         driver.quit();
     }
 }
