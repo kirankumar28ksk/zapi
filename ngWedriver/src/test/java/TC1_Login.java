@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,9 +23,9 @@ public class TC1_Login {
     @BeforeMethod
     public void check(){
 
-//        WebDriverManager.chromedriver().setup();
-//         driver = new ChromeDriver();
-//         driver.manage().window().maximize();
+        WebDriverManager.firefoxdriver().setup();
+         driver = new FirefoxDriver();
+         driver.manage().window().maximize();
     }
 
     @Test
@@ -31,9 +33,12 @@ public class TC1_Login {
 
 
         String path = System.getProperty("user.dir");
-        System.setProperty("webdriver.chrome.driver",path+"/src/test/resources/chromedriver");
-        driver = new ChromeDriver();
-
+//        System.setProperty("webdriver.chrome.driver",path+"/src/test/resources/chromedriver");
+//                System.setProperty("webdriver.gecko.driver",path+"/src/test/resources/geckodriver");
+//        driver = new ChromeDriver();
+//        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+//        capabilities.setCapability("marionette", true);
+//        driver = new FirefoxDriver();
         NgWebDriver ngWebDriver = new NgWebDriver((JavascriptExecutor) driver);
         System.out.println("Login");
         driver.navigate().to("https://t2.devero.com/?site=qaautomation1");
