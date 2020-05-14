@@ -39,7 +39,7 @@ public class TC1_Login {
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("marionette", true);
         driver = new FirefoxDriver(capabilities);
-        NgWebDriver ngWebDriver = new NgWebDriver((JavascriptExecutor) driver);
+//        NgWebDriver ngWebDriver = new NgWebDriver((JavascriptExecutor) driver);
         System.out.println("Login");
         driver.navigate().to("https://t2.devero.com/?site=qaautomation1");
         driver.findElement(By.name("username")).sendKeys("sa");
