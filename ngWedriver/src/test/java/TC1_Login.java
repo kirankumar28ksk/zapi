@@ -38,7 +38,7 @@ public class TC1_Login {
         driver = new ChromeDriver(options);
         System.out.println("Login");
         driver.navigate().to("https://t2.devero.com/?site=qaautomation1");
-        driver.findElement(By.name("username")).sendKeys("sa");
+        driver.findElement(By.name("usernamedsdsd")).sendKeys("sa");
         driver.findElement(By.name("password")).sendKeys("testing123");
         driver.findElement(By.name("submitButton")).click();
     }
