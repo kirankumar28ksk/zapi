@@ -20,6 +20,7 @@ public class TC1_Login {
         System.out.println("testing driver---------");
         String path = System.getProperty("user.dir");
         System.setProperty("webdriver.chrome.driver",path+"/src/test/resources/chromedriver");
+        System.setProperty("webdriver.chrome.whitelistedIps", "");
         DesiredCapabilities cp1 = DesiredCapabilities.chrome();
         cp1.setCapability("chrome.switches", Arrays.asList("--disable-popup-blocking"));
         ChromeOptions options = new ChromeOptions();
