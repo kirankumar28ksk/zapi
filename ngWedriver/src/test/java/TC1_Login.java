@@ -15,7 +15,7 @@ public class TC1_Login {
     @Test
     public void kiran()  {
 
-
+        System.out.println("testing driver---------");
         String path = System.getProperty("user.dir");
         System.setProperty("webdriver.chrome.driver",path+"/src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
